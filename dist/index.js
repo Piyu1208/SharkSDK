@@ -9,7 +9,7 @@ function init() {
 
 */
 import { Agent } from './app/agent.js';
-function init() {
+async function init() {
     const agent = Agent.builder().
         setInstructions("MMA").build().printSysPrompt();
 }

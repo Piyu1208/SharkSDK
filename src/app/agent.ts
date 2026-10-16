@@ -1,4 +1,4 @@
-
+import { HARNESS_PROMPT } from "./config.js";
 /*
 
 class Builder {
@@ -66,7 +66,12 @@ export class Agent {
 
 
     constructor(builder: Builder) {
-        this.instructions = builder.instructions;
+        this.instructions = `
+        ${HARNESS_PROMPT}
+
+        SYSTEM_PROMPT: 
+        ${builder.instructions}
+        `;
     }
 
     static builder() {
